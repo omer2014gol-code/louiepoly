@@ -7,3 +7,4 @@ Play it here: https://omer2014gol-code.github.io/louiepoly/
 - Play on one device with friends or computer players
 - Play online: create a room and send the invite link
 - English and Hebrew
+<!-- build -->
