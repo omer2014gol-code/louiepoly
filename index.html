@@ -142,6 +142,36 @@ h1,h2,h3{text-wrap:balance}
 .card h4{margin:0 0 .6cqw;font-family:var(--display);font-weight:400;font-size:1.6cqw;color:var(--accent)}
 @keyframes deal{from{transform:rotate(-14deg) translateY(4cqw) scale(.8);opacity:0}}
 @media (prefers-reduced-motion:reduce){.tok.cur,.tok.hop,.die.tumble,.card,.cell.land,.seat{animation:none}}
+/* phones: the whole board fits the screen, no dragging; text is scaled up to stay readable */
+@media (max-width:700px){
+  body:has(#game:not([hidden])){padding-left:max(6px,env(safe-area-inset-left,0px));padding-right:max(6px,env(safe-area-inset-right,0px));padding-top:6px}
+  .boardwrap{overflow:visible}
+  .board{width:100%;border-width:2px;gap:1px;border-radius:10px;
+    grid-template-columns:1.3fr repeat(9,1fr) 1.3fr;grid-template-rows:1.3fr repeat(9,1fr) 1.3fr}
+  .cell{font-size:1.9cqw;line-height:1}
+  .cell .band{font-size:1.45cqw;letter-spacing:0;padding:0;border-bottom-width:1px;overflow-wrap:anywhere;line-height:.95}
+  .cell .bd{padding:1px 1px 9%;gap:0}
+  .cell .nm{font-size:1.75cqw;line-height:1}
+  .cell .pr{font-size:1.55cqw}
+  .cell .ic{font-size:3cqw}
+  .cell.special .nm{font-size:1.6cqw}
+  .corner{font-size:2cqw;padding:6% 1px 1px;gap:.2cqw}
+  .corner .ic{font-size:4.6cqw}
+  .corner small{font-size:1.3cqw;line-height:1}
+  .cell.go .corner{font-size:3.2cqw}
+  .tok{width:4.4cqw;font-size:2.5cqw;border-width:1px;box-shadow:0 0 0 1px #13302a}
+  .logo{font-size:9.5cqw}
+  .motto{font-size:2cqw}
+  .die{width:11cqw}
+  .msg{font-size:3cqw;max-width:66cqw}
+  .card{font-size:2.8cqw;max-width:62cqw}
+  .card h4{font-size:2.6cqw}
+}
+@media (max-width:700px){
+  .topbar .mini{display:none}
+  .topbar,.topbar .row{flex-wrap:nowrap;gap:6px;width:100%}
+  .topbar .row button{flex:1;padding:7px 6px;font-size:13px;white-space:nowrap}
+}
 
 .panel{display:flex;flex-direction:column;gap:14px;min-width:0}
 .box{background:var(--panel);border:2px solid var(--line);border-radius:14px;padding:14px;display:flex;flex-direction:column;gap:10px;min-width:0}
